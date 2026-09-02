@@ -176,11 +176,12 @@ startup {
       settings.Add("reached_81", false, "Naomi Cutscenes");
       settings.Add("reached_82", false, "Frog Encounter Done");
       settings.Add("reached_84", false, "Laughing Octopus - Beast Phase Done");
-      settings.Add("reached_88", false, "Laughing Octopus - Beauty Phase Done");
+      settings.Add("reached_86", false, "Laughing Octopus - Beauty Phase Done");
       settings.Add("reached_s02a70l", false, "South America - Mountain Trail Riverside");
-      settings.Add("reached_s02a78l", false, "South America - Drebin Ride 1");
-      settings.Add("reached_s02a80l", false, "South America - Drebin Ride 2");
-      settings.Add("reached_s02a85l", false, "South America - Drebin Ride 3");
+      settings.Add("reached_s02a75l", false, "South America - Drebin Ride 1");
+      settings.Add("reached_s02a78l", false, "South America - Drebin Ride 2");
+      settings.Add("reached_s02a80l", false, "South America - Drebin Ride 3");
+      settings.Add("reached_s02a85l", false, "South America - Drebin Ride 4");
       settings.Add("reached_s02a95l", false, "South America - Marketplace");
       settings.Add("reached_101", false, "End of Act 2");
 
