@@ -227,15 +227,6 @@
       <SegmentHistory />
     </Segment>
     <Segment>
-      <Name>-Met Drebin</Name>
-      <Icon />
-      <SplitTimes>
-        <SplitTime name="Personal Best" />
-      </SplitTimes>
-      <BestSegmentTime />
-      <SegmentHistory />
-    </Segment>
-    <Segment>
       <Name>-Power Station 2</Name>
       <Icon />
       <SplitTimes>
@@ -327,6 +318,15 @@
     </Segment>
     <Segment>
       <Name>-Drebin Ride 3</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name>-Drebin Ride 4</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best" />
@@ -659,16 +659,7 @@
       <SegmentHistory />
     </Segment>
     <Segment>
-      <Name>-Hallway 1</Name>
-      <Icon />
-      <SplitTimes>
-        <SplitTime name="Personal Best" />
-      </SplitTimes>
-      <BestSegmentTime />
-      <SegmentHistory />
-    </Segment>
-    <Segment>
-      <Name>-Hallway 2</Name>
+      <Name>-Hallway</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best" />
@@ -695,7 +686,7 @@
       <SegmentHistory />
     </Segment>
     <Segment>
-      <Name>-LiquidOcelot</Name>
+      <Name>-Liquid Ocelot</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best" />

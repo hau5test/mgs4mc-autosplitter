@@ -144,95 +144,94 @@ startup {
     settings.Add("splits", true, "Split Points");
     settings.CurrentDefaultParent = "act1";
     settings.Add("act1", true, "Act 1", "splits");
-      settings.Add("0_1", false, "End of TV Channels");
-      settings.Add("1_2", false, "Middle East - Infiltration - Area 1");
-      settings.Add("6_7", false, "Middle East - Infiltration - Area 2");
-      settings.Add("7_8", false, "Middle East - Infiltration - Area 3");
-      settings.Add("14_17", false, "Act 1 Briefing Done");
-      settings.Add("17_18", false, "Middle East - Red Zone NW Sector");
-      settings.Add("s01a10l_s01a20l", false, "Middle East - Red Zone");
-      settings.Add("19_22", false, "Middle East - Militia Safe House");
-      settings.Add("s01a20l_s01a30l", false, "Met Drebin");
-      settings.Add("29_30", false, "Middle East - Downtown - Ruins");
-      settings.Add("s01a30l_s01a40l", false, "Middle East - Downtown");
-      settings.Add("31_32", false, "Middle East - Advent Palace - Entry");
-      settings.Add("36_37", false, "Met Rat Patrol");
-      settings.Add("37_38", false, "Middle East - Advent Palace - End of Frog Attack");
-      settings.Add("s01a40l_s01a50l", false, "Middle East - Advent Palace End");
-      settings.Add("s01a50l_s01a55l", false, "Middle East - Crescent Meridian - Area 1");
-      settings.Add("s01a55l_s01a57l", false, "Middle East - Crescent Meridian - Cutscene");
-      settings.Add("45_46", false, "Middle East - Millenium Park");
-      settings.Add("s01a60l_mg_setu", false, "End of Act 1");
+      settings.Add("reached_1", false, "End of TV Channels");
+      settings.Add("reached_2", false, "Middle East - Infiltration - Area 1");
+      settings.Add("reached_7", false, "Middle East - Infiltration - Area 2");
+      settings.Add("reached_8", false, "Middle East - Infiltration - Area 3");
+      settings.Add("reached_17", false, "Act 1 Briefing Done");
+      settings.Add("reached_18", false, "Middle East - Red Zone NW Sector");
+      settings.Add("reached_s01a20l", false, "Middle East - Red Zone");
+      settings.Add("reached_22", false, "Middle East - Militia Safe House");
+      settings.Add("reached_s01a30l", false, "Met Drebin");
+      settings.Add("reached_30", false, "Middle East - Downtown - Ruins");
+      settings.Add("reached_s01a40l", false, "Middle East - Downtown");
+      settings.Add("reached_32", false, "Middle East - Advent Palace - Entry");
+      settings.Add("reached_37", false, "Met Rat Patrol");
+      settings.Add("reached_38", false, "Middle East - Advent Palace - End of Frog Attack");
+      settings.Add("reached_s01a50l", false, "Middle East - Advent Palace End");
+      settings.Add("reached_s01a55l", false, "Middle East - Crescent Meridian - Area 1");
+      settings.Add("reached_s01a57l", false, "Middle East - Crescent Meridian - Cutscene");
+      settings.Add("reached_46", false, "Middle East - Millenium Park");
+      settings.Add("reached_51", false, "End of Act 1");
 
     settings.CurrentDefaultParent = "act2";
     settings.Add("act2", true, "Act 2", "splits");
-      settings.Add("57_61", false, "Act 2 Briefing Done");
-      settings.Add("61_62", false, "South America - Cove Valley Village - Segment 1");
-      settings.Add("s02a10l_s02a20l", false, "South America - Cove Valley Village");
-      settings.Add("s02a20l_s02a25l", false, "South America - Power Station - Area 1");
-      settings.Add("s02a25l_s02a20l", false, "South America - Met  Drebin");
-      settings.Add("s02a20l_s02a30l", false, "South America - Power Station - Area 2");
-      settings.Add("s02a30l_s02a40l", false, "South America - Confinement Facility");
-      settings.Add("s02a40l_s02a50l", false, "South America - Vista Mansion");
-      settings.Add("80_81", false, "Naomi Cutscenes");
-      settings.Add("81_82", false, "Frog Encounter Done");
-      settings.Add("83_84", false, "Laughing Octopus - Beast Phase Done");
-      settings.Add("85_88", false, "Laughing Octopus - Beauty Phase Done");
-      settings.Add("s02a60l_s02a70l", false, "South America - Mountain Trail Riverside");
-      settings.Add("s02a75l_s02a78l", false, "South America - Drebin Ride 1");
-      settings.Add("s02a78l_s02a80l", false, "South America - Drebin Ride 2");
-      settings.Add("s02a80l_s02a85l", false, "South America - Drebin Ride 3");
-      settings.Add("s02a90l_s02a95l", false, "South America - Marketplace");
-      settings.Add("s02a95l_mg_setu", false, "End of Act 2");
+      settings.Add("reached_61", false, "Act 2 Briefing Done");
+      settings.Add("reached_62", false, "South America - Cove Valley Village - Segment 1");
+      settings.Add("reached_s02a20l", false, "South America - Cove Valley Village");
+      settings.Add("reached_s02a25l", false, "South America - Power Station - Area 1");
+      settings.Add("reached_s02a30l", false, "South America - Power Station - Area 2");
+      settings.Add("reached_s02a40l", false, "South America - Confinement Facility");
+      settings.Add("reached_s02a50l", false, "South America - Vista Mansion");
+      settings.Add("reached_81", false, "Naomi Cutscenes");
+      settings.Add("reached_82", false, "Frog Encounter Done");
+      settings.Add("reached_84", false, "Laughing Octopus - Beast Phase Done");
+      settings.Add("reached_86", false, "Laughing Octopus - Beauty Phase Done");
+      settings.Add("reached_s02a70l", false, "South America - Mountain Trail Riverside");
+      settings.Add("reached_s02a75l", false, "South America - Drebin Ride 1");
+      settings.Add("reached_s02a78l", false, "South America - Drebin Ride 2");
+      settings.Add("reached_s02a80l", false, "South America - Drebin Ride 3");
+      settings.Add("reached_s02a85l", false, "South America - Drebin Ride 4");
+      settings.Add("reached_s02a95l", false, "South America - Marketplace");
+      settings.Add("reached_101", false, "End of Act 2");
 
     settings.CurrentDefaultParent = "act3";
     settings.Add("act3", true, "Act 3", "splits");
-      settings.Add("s03a00l_s03a10l", false, "Act 3 Briefing Done");
-      settings.Add("s03a10l_s03a20l", false, "Resistence Member - Area 1");
-      settings.Add("s03a20l_s03a25l", false, "Resistence Member - Area 2");
-      settings.Add("s03a25l_s03a30l", false, "Resistence Member - Area 3");
-      settings.Add("s03a30l_s03a35l", false, "Big Mama Cutscenes");
-      settings.Add("s03a35l_s03a40l", false, "Bike Chase - Area 1");
-      settings.Add("s03a40l_s03a50l", false, "Bike Chase - Area 2");
-      settings.Add("s03a60l_s03a65l", false, "Bike Chase - Area 3");
-      settings.Add("138_139", false, "Bike Chase - Cutscenes");
-      settings.Add("139_140", false, "Raging Raven - Beast Form Done");
-      settings.Add("141_144", false, "Raging Raven - Beauty Form Done");
-      settings.Add("s03a90l_mg_setu", false, "End of Act 3");
+      settings.Add("reached_s03a10l", false, "Act 3 Briefing Done");
+      settings.Add("reached_s03a20l", false, "Resistence Member - Area 1");
+      settings.Add("reached_s03a25l", false, "Resistence Member - Area 2");
+      settings.Add("reached_s03a30l", false, "Resistence Member - Area 3");
+      settings.Add("reached_s03a35l", false, "Big Mama Cutscenes");
+      settings.Add("reached_s03a40l", false, "Bike Chase - Area 1");
+      settings.Add("reached_s03a50l", false, "Bike Chase - Area 2");
+      settings.Add("reached_s03a65l", false, "Bike Chase - Area 3");
+      settings.Add("reach139", false, "Bike Chase - Cutscenes");
+      settings.Add("reached_140", false, "Raging Raven - Beast Form Done");
+      settings.Add("reached_144", false, "Raging Raven - Beauty Form Done");
+      settings.Add("reached_163", false, "End of Act 3");
 
     settings.CurrentDefaultParent = "act4";
     settings.Add("act4", true, "Act 4", "splits");
-      settings.Add("176_177", false, "Act 4 Briefing Done");
-      settings.Add("s04a10l_s04a20l", false, "Shadow Moses - Helipad/Tank Hangar/Snowfield 1");
-      settings.Add("179_180", false, "Shadow Moses - Reached Hal's Labratory");
-      settings.Add("s04a20l_s04a30l", false, "Shadow Moses - Buke Building");
-      settings.Add("194_195", false, "Shadow Moses - Reached Crying Wolf");
-      settings.Add("195_196", false, "Crying Wolf - Beast Form Done");
-      settings.Add("197_200", false, "Crying Wolf - Beauty Form Done");
-      settings.Add("s04a30l_s04a40l", false, "Shadow Moses - Snowfield");
-      settings.Add("s04a40l_s04a50l", false, "Shadow Moses - Blast Furnace");
-      settings.Add("210_211", false, "Shadow Moses - Underground Base");
-      settings.Add("211_212", false, "Made Vamp Human Again");
-      settings.Add("s04a60l_s04a65l", false, "Survived Gecko Rush");
-      settings.Add("s04a65l_s04a68l", false, "Escaoe Shadow Moses");
-      settings.Add("s04a70l_s04a75l", false, "Metal Gear Ray Defeated");
-      settings.Add("s04a75l_mg_setu", false, "End of Act 4");
+      settings.Add("reached_177", false, "Act 4 Briefing Done");
+      settings.Add("reached_s04a20l", false, "Shadow Moses - Helipad/Tank Hangar/Snowfield 1");
+      settings.Add("reached_180", false, "Shadow Moses - Reached Hal's Labratory");
+      settings.Add("reached_s04a30l", false, "Shadow Moses - Buke Building");
+      settings.Add("reached_195", false, "Shadow Moses - Reached Crying Wolf");
+      settings.Add("reached_196", false, "Crying Wolf - Beast Form Done");
+      settings.Add("reached_200", false, "Crying Wolf - Beauty Form Done");
+      settings.Add("reached_s04a40l", false, "Shadow Moses - Snowfield");
+      settings.Add("reached_s04a50l", false, "Shadow Moses - Blast Furnace");
+      settings.Add("reach211", false, "Shadow Moses - Underground Base");
+      settings.Add("reached_212", false, "Made Vamp Human Again");
+      settings.Add("reached_s04a65l", false, "Survived Gecko Rush");
+      settings.Add("reached_s04a68l", false, "Escaoe Shadow Moses");
+      settings.Add("reached_s04a75l", false, "Metal Gear Ray Defeated");
+      settings.Add("reached_223", false, "End of Act 4");
 
     settings.CurrentDefaultParent = "act5";
     settings.Add("act5", true, "Act 5", "splits");
-      settings.Add("229_231", false, "Act 5 Briefing Done");
-      settings.Add("s05a10l_s05a20l", false, "Outer Haven - Ship Bow");
-      settings.Add("232_233", false, "Outer Haven - Command Center");
-      settings.Add("233_234", false, "Guard Rush");
-      settings.Add("235_236", false, "Screaming Mantis - Beast Form Done");
-      settings.Add("237_240", false, "Screaming Mantis - Beauty Form Done");
-      settings.Add("244_245", false, "Outer Haven - Missile Hangar Cutscenes");
-      settings.Add("246_247", false, "Outer Haven - Hallway 1");
-      settings.Add("s05a20l_s05a30l", false, "Outer Haven - Hallway 2");
-      settings.Add("s05a30l_s05a40l", false, "Outer Haven - Microwave Hallway");
-      settings.Add("258_259", false, "Cutscenes");
-      settings.Add("s05a50l_s05a55l", false, "Liquid Ocelot");
-      settings.Add("290_291", true, "Final Split (always active)");
+      settings.Add("reached_231", false, "Act 5 Briefing Done");
+      settings.Add("reached_s05a20l", false, "Outer Haven - Ship Bow");
+      settings.Add("reached_233", false, "Outer Haven - Command Center");
+      settings.Add("reached_234", false, "Guard Rush");
+      settings.Add("reached_236", false, "Screaming Mantis - Beast Form Done");
+      settings.Add("reached_240", false, "Screaming Mantis - Beauty Form Done");
+      settings.Add("reached_245", false, "Outer Haven - Missile Hangar Cutscenes");
+      settings.Add("reached_s05a30l", false, "Outer Haven - Hallway");
+      settings.Add("reached_s05a40l", false, "Outer Haven - Microwave Hallway");
+      settings.Add("reached_259", false, "Cutscenes");
+      settings.Add("reached_s05a55l", false, "Liquid Ocelot");
+      settings.Add("reached_291", true, "Final Split (always active)");
 
     vars.completedSplits = 0;
     print("Startup complete");
@@ -268,15 +267,16 @@ start {
 
 split {
     if (current.scenarioProgress != old.scenarioProgress) {
-        print(old.scenarioProgress + "_" + current.scenarioProgress);
-        return (settings.ContainsKey(old.scenarioProgress + "_" + current.scenarioProgress)
-                && settings[old.scenarioProgress + "_" + current.scenarioProgress]
-                && vars.completedSplits.Add(old.scenarioProgress + "_" + current.scenarioProgress));
-    } else if (current.MapName != old.MapName) {
-        return (settings.ContainsKey(old.MapName + "_" + current.MapName)
-                && settings[old.MapName + "_" + current.MapName]
-                && vars.completedSplits.Add(old.MapName + "_" + current.MapName));
-        print(old.MapName + "_" + current.MapName);
+        print("reached_" + current.scenarioProgress);
+        return (settings.ContainsKey("reached_" + current.scenarioProgress)
+                && settings["reached_" + current.scenarioProgress]
+                && vars.completedSplits.Add("reached_" + current.scenarioProgress));
+    }
+    if (current.MapName != old.MapName) {
+        print("reached_" + current.MapName);
+        return (settings.ContainsKey("reached_" + current.MapName)
+                && settings["reached_" + current.MapName]
+                && vars.completedSplits.Add("reached_" + current.MapName));
     }
 }
 
@@ -286,6 +286,6 @@ reset {
 
 onReset
 {
-    vars.completedSplits = 0;
+  vars.completedSplits.Clear();
   return true;
 }
