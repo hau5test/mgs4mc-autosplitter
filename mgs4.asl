@@ -235,6 +235,7 @@ startup {
       settings.Add("s05a50l_s05a55l", false, "Liquid Ocelot");
       settings.Add("290_291", true, "Final Split (always active)");
 
+    vars.completedSplits = 0;
     print("Startup complete");
 }
 
@@ -248,6 +249,9 @@ init {
     vars.Helper["IGT"] = vars.Helper.Make<uint>(0x1C28B28 + 0x168);
     print("init done");
     */
+
+  vars.completedSplits = new HashSet<string>();
+    
 }
 
 update {
@@ -263,14 +267,20 @@ gameTime
 	return TimeSpan.FromMilliseconds(current.GameTime * 1000 / 60);
 }
 
+onStart {
+  vars.completedSplits.Clear();
+}
+
 start {
-if(current.MapName != "title" && old.MapName == "title") return true;
+  if(current.MapName != "title" && old.MapName == "title") return true;
 }
 
 split {
     if (current.scenarioProgress != old.scenarioProgress) {
         print(old.scenarioProgress + "_" + current.scenarioProgress);
-        if(settings.ContainsKey(old.scenarioProgress + "_" + current.scenarioProgress)) return true;
+        if(settings.ContainsKey(old.scenarioProgress + "_" + current.scenarioProgress)
+        && settings[old.scenarioProgress + "_" + current.scenarioProgress]
+        && vars.completedSplits.Add(old.scenarioProgress + "_" + current.scenarioProgress)) return true;
     } else if (current.MapName != old.MapName) {
         print(old.MapName + "_" + current.MapName);
     } 
@@ -283,6 +293,6 @@ if(current.MapName == "title") return true;
 
 onReset
 {
-    
+    vars.completedSplits = 0;
   return true;
 }
