@@ -119,23 +119,22 @@ s20a10l 	USS Missouri vs. Outer Haven
 s20a20l 	Campbell's Room
 s30a00l 	Wedding
 s30a10l 	Hospital
-
 */
 
 state("mgs4") {
-    // temporary for testing
+    // temporary for testing based on version 1.4.0
+    /*
     uint GameTime: 0x1C28B28, 0x0168;
     string7 MapName: 0x1C28B28, 0x34;
     uint scenarioProgress: 0x1C28B28, 0x54;
     uint difficulty: 0x1C28B28, 0x6; //LE = 20, NN = 30, SN = 35, BBH = 40, TBE = 50
-    /*
     */
 }
 
 startup {
 
-/*
     Assembly.Load(File.ReadAllBytes("Components/asl-help")).CreateInstance("Basic");
+/*
 */
     //This allows is to look through a bitmask in order to get split information
     vars.bitCheck = new Func<int, int, bool>((int val, int b) => (val & (1 << b)) != 0);
@@ -240,26 +239,19 @@ startup {
 }
 
 init {
-    /*
-    // find linkVarBuf starting point
-    IntPtr linkvarbuf = vars.Helper.ScanRel(3, "48 8B 15 ?? ?? ?? ?? 48 63 82 60 01 00 00 49");
+  // find linkVarBuf starting point
+  IntPtr gameStats = vars.Helper.ScanRel(3, "48 8B 15 ?? ?? ?? ?? 48 63 82 60 01 00 00 49");
 
-    // based off the linkvarbuf root plus offset, we can make further variables to be used for splitting logic
-    vars.Helper["Map"] = vars.Helper.MakeString(0x1C28B28 + 0x34);
-    vars.Helper["IGT"] = vars.Helper.Make<uint>(0x1C28B28 + 0x168);
-    print("init done");
-    */
-
+  vars.Helper["GameTime"] = vars.Helper.Make<uint>(gameStats, 0x168);
+  vars.Helper["MapName"] = vars.Helper.MakeString(gameStats, 0x34);
+  vars.Helper["scenarioProgress"] = vars.Helper.Make<uint>(gameStats, 0x54);
+  vars.Helper["difficulty"] = vars.Helper.Make<short>(gameStats, 0x6);
   vars.completedSplits = new HashSet<string>();
-    
 }
 
 update {
-    /*
     vars.Helper.Update();
-	vars.Helper.MapPointers();
-    print(GameTime.current);
-    */
+  	vars.Helper.MapPointers();
 }
 
 gameTime
@@ -270,25 +262,26 @@ gameTime
 onStart {
   vars.completedSplits.Clear();
 }
-
 start {
-  if(current.MapName != "title" && old.MapName == "title") return true;
+  return (current.MapName != "title" && old.MapName == "title");
 }
 
 split {
     if (current.scenarioProgress != old.scenarioProgress) {
         print(old.scenarioProgress + "_" + current.scenarioProgress);
-        if(settings.ContainsKey(old.scenarioProgress + "_" + current.scenarioProgress)
-        && settings[old.scenarioProgress + "_" + current.scenarioProgress]
-        && vars.completedSplits.Add(old.scenarioProgress + "_" + current.scenarioProgress)) return true;
+        return (settings.ContainsKey(old.scenarioProgress + "_" + current.scenarioProgress)
+                && settings[old.scenarioProgress + "_" + current.scenarioProgress]
+                && vars.completedSplits.Add(old.scenarioProgress + "_" + current.scenarioProgress));
     } else if (current.MapName != old.MapName) {
+        return (settings.ContainsKey(old.MapName + "_" + current.MapName)
+                && settings[old.MapName + "_" + current.MapName]
+                && vars.completedSplits.Add(old.MapName + "_" + current.MapName));
         print(old.MapName + "_" + current.MapName);
-    } 
-
+    }
 }
 
 reset {
-if(current.MapName == "title") return true;
+  return current.MapName == "title";
 }
 
 onReset
