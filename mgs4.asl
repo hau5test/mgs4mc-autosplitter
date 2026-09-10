@@ -132,14 +132,23 @@ state("mgs4") {
 }
 
 startup {
+    vars.D = new ExpandoObject();
+    var D = vars.D;
 
     Assembly.Load(File.ReadAllBytes("Components/asl-help")).CreateInstance("Basic");
-/*
-*/
+
     //This allows is to look through a bitmask in order to get split information
     vars.bitCheck = new Func<int, int, bool>((int val, int b) => (val & (1 << b)) != 0);
     
     vars.difficultyName = "";
+
+    D.Difficulty = new Dictionary<uint, string>() {
+    { 20 , "Liquid Easy" },
+    { 30,  "Naked Normal" },
+    { 35,  "Solid Normal" },
+    { 40,  "Big Boss Hard" },
+    { 50,  "The Boss Extreme" }
+  };
 
     settings.Add("settings", true, "Settings");
     settings.Add("splits", true, "Split Points");
@@ -260,8 +269,12 @@ init {
 }
 
 update {
-    vars.Helper.Update();
-  	vars.Helper.MapPointers();
+  var D = vars.D;
+  vars.Helper.Update();
+  vars.Helper.MapPointers();
+  var diff = "";
+  D.Difficulty.TryGetValue((uint)current.difficulty, out diff);
+  vars.difficultyName = diff;
 }
 
 gameTime
@@ -318,5 +331,6 @@ onReset
   vars.completedSplits.Clear();
   vars.startingTime = 0;
   vars.timerOffset = "";
+  vars.difficultyName = "";
   return true;
 }
