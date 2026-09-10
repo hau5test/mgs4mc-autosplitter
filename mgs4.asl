@@ -141,7 +141,12 @@ startup {
     
     vars.difficultyName = "";
 
+    settings.Add("settings", true, "Settings");
     settings.Add("splits", true, "Split Points");
+
+    settings.CurrentDefaultParent = "settings";
+    settings.Add("il_timer", false, "Replace game's IGT with IL timing method");
+
     settings.CurrentDefaultParent = "act1";
     settings.Add("act1", true, "Act 1", "splits");
       settings.Add("reached_1", false, "End of TV Channels");
@@ -237,7 +242,9 @@ startup {
       settings.Add("reached_s05a55l", false, "Liquid Ocelot");
       settings.Add("reached_291", true, "Final Split (always active)");
 
-    vars.completedSplits = 0;
+    vars.completedSplits = new HashSet<string>();
+    vars.startingTime = 0;
+    vars.timerOffset = "";
     print("Startup complete");
 }
 
@@ -259,13 +266,16 @@ update {
 
 gameTime
 {
-	return TimeSpan.FromMilliseconds(current.GameTime * 1000 / 60);
+	return TimeSpan.FromMilliseconds((current.GameTime - (settings["il_timer"]?vars.startingTime:0)) * 1000 / 60);
 }
 
 onStart {
   vars.completedSplits.Clear();
+  vars.startingTime = current.GameTime;
+  vars.timerOffset = TimeSpan.FromMilliseconds(current.GameTime * 1000 / 60).ToString(@"mm\:ss\.ff");
 }
 start {
+
   return (current.MapName != "title" && old.MapName == "title");
 }
 
@@ -306,5 +316,7 @@ reset {
 onReset
 {
   vars.completedSplits.Clear();
+  vars.startingTime = 0;
+  vars.timerOffset = "";
   return true;
 }
