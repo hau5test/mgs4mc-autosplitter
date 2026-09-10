@@ -176,7 +176,8 @@ startup {
       settings.Add("reached_81", false, "Naomi Cutscenes");
       settings.Add("reached_82", false, "Frog Encounter Done");
       settings.Add("reached_84", false, "Laughing Octopus - Beast Phase Done");
-      settings.Add("reached_86", false, "Laughing Octopus - Beauty Phase Done");
+      settings.Add("reached_88", false, "Laughing Octopus - Beauty Phase Done");
+      settings.SetToolTip("reached_88", "Splits on either lethal or non-lethal takedown of beauty version");
       settings.Add("reached_s02a70l", false, "South America - Mountain Trail Riverside");
       settings.Add("reached_s02a75l", false, "South America - Drebin Ride 1");
       settings.Add("reached_s02a78l", false, "South America - Drebin Ride 2");
@@ -198,6 +199,7 @@ startup {
       settings.Add("reached_139", false, "Bike Chase - Cutscenes");
       settings.Add("reached_140", false, "Raging Raven - Beast Form Done");
       settings.Add("reached_144", false, "Raging Raven - Beauty Form Done");
+      settings.SetToolTip("reached_144", "Splits on either lethal or non-lethal takedown of beauty version");
       settings.Add("reached_163", false, "End of Act 3");
 
     settings.CurrentDefaultParent = "act4";
@@ -209,6 +211,7 @@ startup {
       settings.Add("reached_195", false, "Shadow Moses - Reached Crying Wolf");
       settings.Add("reached_196", false, "Crying Wolf - Beast Form Done");
       settings.Add("reached_200", false, "Crying Wolf - Beauty Form Done");
+      settings.SetToolTip("reached_200", "Splits on either lethal or non-lethal takedown of beauty version");
       settings.Add("reached_s04a40l", false, "Shadow Moses - Snowfield");
       settings.Add("reached_s04a50l", false, "Shadow Moses - Blast Furnace");
       settings.Add("reach211", false, "Shadow Moses - Underground Base");
@@ -226,6 +229,7 @@ startup {
       settings.Add("reached_234", false, "Guard Rush");
       settings.Add("reached_236", false, "Screaming Mantis - Beast Form Done");
       settings.Add("reached_240", false, "Screaming Mantis - Beauty Form Done");
+      settings.SetToolTip("reached_240", "Splits on either lethal or non-lethal takedown of beauty version");
       settings.Add("reached_245", false, "Outer Haven - Missile Hangar Cutscenes");
       settings.Add("reached_s05a30l", false, "Outer Haven - Hallway");
       settings.Add("reached_s05a40l", false, "Outer Haven - Microwave Hallway");
@@ -268,9 +272,24 @@ start {
 split {
     if (current.scenarioProgress != old.scenarioProgress) {
         print("reached_" + current.scenarioProgress);
-        return (settings.ContainsKey("reached_" + current.scenarioProgress)
-                && settings["reached_" + current.scenarioProgress]
-                && vars.completedSplits.Add("reached_" + current.scenarioProgress));
+        // change flag if lethal-beauty phase was performed
+        var flagProgress = current.scenarioProgress;
+        if(flagProgress == 86) {
+          flagProgress = 88;
+          print("changed to reached_" + flagProgress);
+        } else if (flagProgress == 142) {
+          flagProgress = 144;  
+          print("changed to reched_" + flagProgress);
+        } else if (flagProgress == 198) {
+          flagProgress = 200;
+          print("changed to reched_" + flagProgress);
+        } else if (flagProgress == 238) {
+          flagProgress = 240;
+          print("changed to reched_" + flagProgress);
+        }
+        return (settings.ContainsKey("reached_" + flagProgress)
+                && settings["reached_" + flagProgress]
+                && vars.completedSplits.Add("reached_" + flagProgress));
     }
     if (current.MapName != old.MapName) {
         print("reached_" + current.MapName);
