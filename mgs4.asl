@@ -195,7 +195,7 @@ startup {
       settings.Add("reached_s03a40l", false, "Bike Chase - Area 1");
       settings.Add("reached_s03a50l", false, "Bike Chase - Area 2");
       settings.Add("reached_s03a65l", false, "Bike Chase - Area 3");
-      settings.Add("reach139", false, "Bike Chase - Cutscenes");
+      settings.Add("reached_139", false, "Bike Chase - Cutscenes");
       settings.Add("reached_140", false, "Raging Raven - Beast Form Done");
       settings.Add("reached_144", false, "Raging Raven - Beauty Form Done");
       settings.Add("reached_163", false, "End of Act 3");
