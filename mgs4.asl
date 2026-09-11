@@ -228,7 +228,7 @@ startup {
       settings.SetToolTip("reached_200", "Splits on either lethal or non-lethal takedown of beauty version");
       settings.Add("reached_s04a40l", false, "Shadow Moses - Snowfield");
       settings.Add("reached_s04a50l", false, "Shadow Moses - Blast Furnace");
-      settings.Add("reach211", false, "Shadow Moses - Underground Base");
+      settings.Add("reached_211", false, "Shadow Moses - Underground Base");
       settings.Add("reached_212", false, "Made Vamp Human Again");
       settings.Add("reached_s04a65l", false, "Survived Gecko Rush");
       settings.Add("reached_s04a68l", false, "Escaoe Shadow Moses");
