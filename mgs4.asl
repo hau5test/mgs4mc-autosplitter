@@ -334,3 +334,7 @@ onReset
   vars.difficultyName = "";
   return true;
 }
+
+isLoading {
+  return true;
+}
